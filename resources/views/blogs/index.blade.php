@@ -1,5 +1,5 @@
 @extends('blogs.layout')
- 
+
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -25,7 +25,7 @@
             <th>Description</th>
             <th width="250px">Action</th>
         </tr>
-        @foreach ($blogs as $blog)
+        @foreach ($blogs ?? '' as $blog)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $blog->title }}</td>
@@ -47,6 +47,6 @@
         @endforeach
     </table>
   
-    {!! $blogs->links() !!}
+    {!! $blogs ?? ''->links() !!}
       
 @endsection

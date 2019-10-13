@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('blogs','BlogController');
+Auth::routes();
+Route::group(['middleware' => ['web']], function() {
+    
+});
+Route::get('/home', 'HomeController@index')->name('home');
