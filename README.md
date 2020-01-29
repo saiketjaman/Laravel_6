@@ -1,1 +1,1 @@
-# Laravel_6 CRUD and Authentication
+# Laravel_6 Role & Permission management System and CRUD Authentication
