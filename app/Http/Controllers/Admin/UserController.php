@@ -88,6 +88,11 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
+        if($user->save()){
+            $request->session()->flash('success', $user->name. ' has been updated');
+        }else{
+            $request->session()->flash('error', $user->name. 'There was an error updating the user.');
+        }
         return redirect()->route('admin.users.index');
     }
 
@@ -104,6 +109,7 @@ class UserController extends Controller
         }
         $user->roles()->detach();
         $user->delete();
+        Session()->flash('warning', $user->name. ' has been deleted');
         return redirect()->route('admin.users.index');
     }
 }

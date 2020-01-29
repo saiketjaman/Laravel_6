@@ -76,11 +76,11 @@
                 </div>
             </div>
         </nav>
-        {{-- <div class="container">
-                @yield('content')
-        </div> --}}
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                    @include('flashmessage.alerts')
+                    @yield('content')
+            </div>
         </main>
         <div class="jumbotron text-center" style="margin-bottom:0">
             <p>Footer</p>
